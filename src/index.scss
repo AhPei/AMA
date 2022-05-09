@@ -95,3 +95,61 @@ body {
 .icon {
   color: grey;
 }
+
+//Signup 
+
+.flex-container {
+  display: flex;
+}
+
+.flex-child {
+  // flex:1 ;
+  border: 2px solid yellow;
+}  
+
+.flex-child:first-child {
+  margin-right: 20px;
+} 
+
+hr {
+  border-top: 1px solid red;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.profile-border{
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  
+}
+
+.profile-image{
+  width:100px;
+  height: 150ps;
+  margin-top: 60px;
+}
+
+
