@@ -11,6 +11,7 @@ import {
   SignUp,
   // About,
   Contact,
+  Password,
   // Blog,
   // Posts,
   // Post,
@@ -24,6 +25,7 @@ ReactDOM.render(
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/password" element={<Password />} />
       {/* <Route path="/blog" element={<Blog />}>
         <Route path="" element={<Posts />} />
         <Route path=":postSlug" element={<Post />} />
