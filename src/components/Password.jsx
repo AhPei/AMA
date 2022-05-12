@@ -19,7 +19,7 @@ class Password extends Component {
               </div>
               
               <div class="flex-child green">
-                <div class="signupborder">
+                <div class="margin-border">
                   <h2>Sign Up</h2>
                   <h3>Please enter the details</h3>
                   <hr />
