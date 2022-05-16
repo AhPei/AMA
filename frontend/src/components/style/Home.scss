@@ -1,0 +1,37 @@
+@import "../../index.scss";
+.card-group {
+  display: flex;
+  min-height: 100%; //90vh
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  min-height: 100%;
+  word-wrap: break-word;
+  color: $grey;
+  background: linear-gradient(to bottom left, $grey 1%, $green);
+}
+
+.card-group > .card {
+  margin-bottom: 0.75rem;
+}
+
+.card-body {
+  padding-top: 10%;
+  padding-left: 3%;
+  width: 50%;
+  height: auto;
+}
+.card-title {
+  margin-bottom: 0.5rem;
+}
+.card-subtitle {
+  margin-top: -0.25rem;
+  margin-bottom: 0;
+}
+.card-text:last-child {
+  margin-bottom: 0;
+}

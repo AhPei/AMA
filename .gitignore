@@ -1,0 +1,7 @@
+#This file will ignore files/folders below:
+
+# dependencies
+node_modules
+
+# python cahce
+__pycache__
