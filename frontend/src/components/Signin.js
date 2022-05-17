@@ -11,11 +11,24 @@ export default class Signin extends Component {
       email: null,
       password: null,
     };
-    this.handleEmail = this.handleEmail.bind(this);
-    this.handlePassword = this.handlePassword.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleLoginButtonPressed = this.handleLoginButtonPressed.bind(this);
-    this.handleLogoutButtonPressed = this.handleLogoutButtonPressed.bind(this);
+    // this.handleEmail = this.handleEmail.bind(this);
+    // this.handlePassword = this.handlePassword.bind(this);
+    // this.handleLogoutButtonPressed = this.handleLogoutButtonPressed.bind(this);
   }
+
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  // handleEmail(e) {
+  //   this.setState({ email: e.target.value });
+  // }
+
+  // handlePassword(e) {
+  //   this.setState({ password: e.target.value });
+  // }
 
   // Login Button
   async handleLoginButtonPressed() {
@@ -51,18 +64,6 @@ export default class Signin extends Component {
     // sessionStorage.setItem("Auth Token", data);
   }
 
-  handleEmail(e) {
-    this.setState({
-      email: e.target.value,
-    });
-  }
-
-  handlePassword(e) {
-    this.setState({
-      password: e.target.value,
-    });
-  }
-
   render() {
     return (
       <div>
@@ -78,7 +79,7 @@ export default class Signin extends Component {
               placeholder="Enter Your Email"
               Required
               value={this.state.email}
-              onChange={this.handleEmail}
+              onChange={this.handleChange}
             />
           </div>
           <br />
@@ -92,7 +93,7 @@ export default class Signin extends Component {
               placeholder="Enter Your Password"
               Required
               value={this.state.password}
-              onChange={this.handlePassword}
+              onChange={this.handleChange}
             />
           </div>
           <br />
@@ -103,13 +104,13 @@ export default class Signin extends Component {
           >
             Log In
           </button>
-          <button
+          {/* <button
             type="submit"
             className="btn btn-primary"
             onClick={this.handleLogoutButtonPressed}
           >
             Log Out
-          </button>
+          </button> */}
         </div>
       </div>
     );

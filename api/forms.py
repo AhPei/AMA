@@ -7,3 +7,7 @@ class UserForm(forms.Form):
   fname = forms.CharField(max_length=50,required=True)
   lname = forms.CharField(max_length=50,required=True)
   phone = forms.CharField(max_length=50,required=True)
+
+class UserLoginForm(forms.Form):
+  email = forms.EmailField(max_length=50,required=True)
+  password = forms.CharField(widget=forms.PasswordInput(),required=True)

@@ -2,10 +2,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('signin', views.SignIn),
-    path('signup', views.SignUp),
-    path('signout', views.SignOut),
-    path('checkLogin', views.CheckLogin),
+    path('signin', views.SignIn), # Post
+    path('signup', views.SignUp), # Post
+    path('signout', views.SignOut), # Get
+    path('updateUser', views.UpdateUser), # POST
+    path('checkLogin', views.CheckLogin), # Get
     # path('save', views.saveData),
     # path('signt', views.SignTEST),
 ]
