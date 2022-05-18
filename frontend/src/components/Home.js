@@ -3,7 +3,25 @@ import "./style/Home.scss";
 import { NavLink } from "react-router-dom";
 
 class Home extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.handleLogoutButtonPressed = this.handleLogoutButtonPressed.bind(this);
+  }
+
+  // Logout Button
+  async handleLogoutButtonPressed() {
+    await fetch("/api/signout")
+      .then((response) => {
+        if (response.ok) this.props.history.push("/login");
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data["Message"]);
+      })
+      .catch((err) => console.log(err));
+  }
+
   render() {
     return (
       <div className="card-group">
@@ -18,6 +36,13 @@ class Home extends Component {
             <NavLink className="navbar-brand btn" to="/signup">
               SIGNUP
             </NavLink>
+            <button
+              type="submit"
+              className="btn btn-primary"
+              onClick={this.handleLogoutButtonPressed}
+            >
+              Log Out
+            </button>
           </div>
         </div>
         <div className="card">

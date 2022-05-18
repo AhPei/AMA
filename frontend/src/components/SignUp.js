@@ -16,52 +16,12 @@ class SignUp extends Component {
       current_step: 1,
       total_steps: 2,
     };
-    // this.handleEmail = this.handleEmail.bind(this);
-    // this.handlePassword = this.handlePassword.bind(this);
-    // this.handleUname = this.handleUname.bind(this);
-    // this.handleFname = this.handleFname.bind(this);
-    // this.handleLname = this.handleLname.bind(this);
-    // this.handlePhone = this.handlePhone.bind(this);
     this.handleRegisterButtonPressed =
       this.handleRegisterButtonPressed.bind(this);
     this.goToNextClick = this.goToNextClick.bind(this);
     this.goToPreviousClick = this.goToPreviousClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-
-  // handleEmail(e) {
-  //   this.setState({
-  //     email: e.target.value,
-  //   });
-  // }
-
-  // handlePassword(e) {
-  //   this.setState({
-  //     password: e.target.value,
-  //   });
-  // }
-  // handleUname(e) {
-  //   this.setState({
-  //     uname: e.target.value,
-  //   });
-  // }
-
-  // handleFname(e) {
-  //   this.setState({
-  //     fname: e.target.value,
-  //   });
-  // }
-  // handleLname(e) {
-  //   this.setState({
-  //     lname: e.target.value,
-  //   });
-  // }
-
-  // handlePhone(e) {
-  //   this.setState({
-  //     phone: e.target.value,
-  //   });
-  // }
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });

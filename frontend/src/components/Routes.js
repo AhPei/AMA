@@ -6,6 +6,8 @@ import {
   Route,
   Link,
   Redirect,
+  useHistory,
+  Navigate,
 } from "react-router-dom";
 import {
   Navigation,
@@ -17,35 +19,37 @@ import {
   ManageAccount,
   ManageAccountPackage,
 } from "./index";
+// import Home from "./Home";
 
 export default class Routes extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoggedIn: null,
-    };
+    // this.state = {
+    //   isLoggedIn: null,
+    // };
   }
 
-  async componentDidMount() {
-    await fetch("/api/checkLogin")
-      .then((response) => {
-        if (response.ok) this.setState({ isLoggedIn: true });
-        else this.setState({ isLoggedIn: false });
-        // console.log(this.state.isLoggedIn);
-      })
-      .catch((err) => console.log(err));
-  }
+  // async componentDidMount() {
+  // await fetch("/api/checkLogin")
+  //   .then((response) => {
+  //     this.setState({ isLoggedIn: response.ok });
+  //   })
+  //   .catch((err) => console.log(err));
+  // }
 
   render() {
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          {/* <Route path="/login" component={Signin} /> */}
-          <Route
+          {/* <Route exact path="/">
+            {this.state.isLoggedIn ? Home : Signin}
+          </Route> */}
+          {/* <Route
             path="/login"
-            component={!this.state.isLoggedIn ? Signin : Home}
-          />
+            component={this.state.isLoggedIn ? Home : Signin}
+          /> */}
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Signin} />
           <Route path="/signup" component={SignUp} />
           <Route path="/contact" component={Contact} />
           <Route path="/manageaccount" component={ManageAccount} />

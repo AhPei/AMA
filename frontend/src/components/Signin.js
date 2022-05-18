@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import requestOptions from "../requestOptions";
-// import csrftoken from "../csrftoken";
-
-// import { login, signup, signedin, logout } from "./AuthContext";
 
 export default class Signin extends Component {
   constructor(props) {
@@ -13,41 +10,14 @@ export default class Signin extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleLoginButtonPressed = this.handleLoginButtonPressed.bind(this);
-    // this.handleEmail = this.handleEmail.bind(this);
-    // this.handlePassword = this.handlePassword.bind(this);
-    // this.handleLogoutButtonPressed = this.handleLogoutButtonPressed.bind(this);
   }
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  // handleEmail(e) {
-  //   this.setState({ email: e.target.value });
-  // }
-
-  // handlePassword(e) {
-  //   this.setState({ password: e.target.value });
-  // }
-
   // Login Button
   async handleLoginButtonPressed() {
-    // // Login with react firebase
-    // if (await signedin()) {
-    //   console.log("Logout");
-    //   return logout();
-    //   // return this.props.history.push("/");
-    // }
-
-    // try {
-    //   const email = this.state.email,;
-    //   const password = this.state.password;
-    //   await login(email, password);
-    //   return this.props.history.push("/");
-    // } catch {
-    //   console.log("failed to login");
-    // }
-    // ---------------------
     const body = {
       email: this.state.email,
       password: this.state.password,
@@ -61,7 +31,6 @@ export default class Signin extends Component {
         console.log(data["Message"]);
       })
       .catch((err) => console.log(err));
-    // sessionStorage.setItem("Auth Token", data);
   }
 
   render() {
@@ -104,13 +73,6 @@ export default class Signin extends Component {
           >
             Log In
           </button>
-          {/* <button
-            type="submit"
-            className="btn btn-primary"
-            onClick={this.handleLogoutButtonPressed}
-          >
-            Log Out
-          </button> */}
         </div>
       </div>
     );
