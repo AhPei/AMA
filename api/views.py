@@ -3,7 +3,7 @@ from rest_framework import generics, status
 from django.http import HttpResponse, HttpResponseNotFound, HttpRequest, JsonResponse, QueryDict
 from django.views.decorators.csrf import csrf_exempt
 from .forms import UserForm, UserLoginForm
-from .firebase import db, authe, database
+from .firebase import authe, database
 
 # Sign in
 @csrf_exempt

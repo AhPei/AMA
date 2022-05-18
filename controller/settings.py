@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-# import os 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+# # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'api.apps.ApiConfig',
-    'frontend.apps.FrontendConfig'
+    'frontend.apps.FrontendConfig',
+    'import.apps.ImportConfig'
 ]
 
 MIDDLEWARE = [
@@ -124,4 +125,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# FIREBASE_CONFIG = os.path.join(BASE_DIR, 'automated-marking-assessment-firebase-adminsdk-wc3vg-f6c649ebcd.json')
