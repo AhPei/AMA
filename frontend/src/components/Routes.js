@@ -24,20 +24,35 @@ import {
 export default class Routes extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   isLoggedIn: null,
-    // };
+    this.state = {
+      isLoggedIn: null,
+    };
   }
 
-  // async componentDidMount() {
-  // await fetch("/api/checkLogin")
-  //   .then((response) => {
-  //     this.setState({ isLoggedIn: response.ok });
-  //   })
-  //   .catch((err) => console.log(err));
-  // }
+  async componentDidMount() {
+    await fetch("/api/checkLogin")
+      .then((response) => {
+        this.setState({ isLoggedIn: response.ok });
+      })
+      .catch((err) => console.log(err));
+  }
 
   render() {
+    let checkLogin:
+    checkLogin = {
+      if (isLoggedIn) {
+        <Route exact path="/" component={Home} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/manageaccount" component={ManageAccount} />
+        <Route
+          path="/manageaccountpackage"
+          component={ManageAccountPackage}
+        />
+      } else {
+        <Route path="/login" component={Signin} />
+        <Route path="/signup" component={SignUp} />
+    }
+
     return (
       <Router>
         <Switch>
@@ -48,15 +63,7 @@ export default class Routes extends Component {
             path="/login"
             component={this.state.isLoggedIn ? Home : Signin}
           /> */}
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Signin} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/manageaccount" component={ManageAccount} />
-          <Route
-            path="/manageaccountpackage"
-            component={ManageAccountPackage}
-          />
+         { checkLogin }
         </Switch>
       </Router>
     );
