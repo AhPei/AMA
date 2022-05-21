@@ -1,6 +1,7 @@
 # AMA 1.0
 
-Follow the step below:
+## Follow the step below:
+
 1. python manage.py runserver
 2. open another cmd
 3. cd frontend
