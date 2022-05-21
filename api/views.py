@@ -77,8 +77,6 @@ def UpdateUser(request):
   except:
     return JsonResponse({"Message":"You are not login"}, status=status.HTTP_409_CONFLICT)
 
-
-
 # Logout
 def SignOut(request):
   if request.method != "GET":
@@ -93,71 +91,3 @@ def CheckLogin(request):
   if authe.current_user:
     return JsonResponse({"Message":"User Logged In"}, status=status.HTTP_200_OK)
   return JsonResponse({"Message":"User Not LogIn"}, status=status.HTTP_400_BAD_REQUEST)
-
-# body = QueryDict(request.body) 
-# print(body.get("email"))
-
-# # TESTING
-# @csrf_exempt
-# def saveData(request):
-#   try:
-#     # # The app only has access as defined in the Security Rules
-#     # ref = db.reference('/users')
-#     # ref.set({
-#     #   user['localId']: {
-#     #     'uname': request.POST.get('uname'),
-#     #     'fname': request.POST.get('fname'),
-#     #     'lname': request.POST.get('lname'),
-#     #     'phone': request.POST.get('phone'),
-#     #   }
-#     # })
-#     user = authe.sign_in_with_email_and_password("goh20@gmail.com", "admin1")
-#     data = {
-#       'uname': "ahpei",
-#       'fname': "goh",
-#       'lname': "pei sheng",
-#       'phone': '0163120621',
-#     }
-#     # database.child("users").child(user['localId']).push(data, user['idToken']) 
-#     database.child("users").child("USERID").set(data)
-#     return JsonResponse({"Message":"Everything Saved"}, status=status.HTTP_200_OK)
-#   except:
-#     return JsonResponse({"Message":"Failed to upload"}, status=status.HTTP_400_BAD_REQUEST)
-
-# # JSON FORMAT
-# import json
-# def JSON(body):
-#   body = json.loads(body)
-#   return body
-
-# @csrf_exempt
-# def SignTEST(request):
-#   if request.method != "POST":
-#     print(JSON(request.body)['email'])
-#     return JsonResponse({"Message:":"Create User Successfully"}, status=status.HTTP_200_OK)
-
-
-# # -----------------------------
-# # Pass the user's idToken to the push method
-# # results = db.child("users").push(userData, user['idToken']) 
-
-# # before the 1 hour expiry:
-# user = auth.refresh(user['refreshToken'])
-
-# # now we have a fresh token
-# user['idToken']
-
-# # Premium Account 
-# token_with_additional_claims = auth.create_custom_token("your_custom_id", {"premium_account": True})
-
-# # You can then send these tokens to the client to sign in, or sign in as the user on the server.
-# user = auth.sign_in_with_custom_token(token)
-
-# # Verifying emails
-# auth.send_email_verification(user['idToken'])
-# # Sending password reset emails
-# auth.send_password_reset_email("email")
-# # Get account information
-# auth.get_account_info(user['idToken'])
-# # Refreshing tokezns
-# user = auth.refresh(user['refreshToken'])

@@ -4,67 +4,39 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
-  useHistory,
-  Navigate,
 } from "react-router-dom";
-import {
-  Navigation,
-  Footer,
-  Home,
-  Signin,
-  SignUp,
-  Contact,
-  ManageAccount,
-  ManageAccountPackage,
-} from "./index";
-// import Home from "./Home";
+import Footer from "./Footer";
+import Navigation from "./Navigation";
+import Home from "./Home";
+import Signin from "./Signin";
+import SignUp from "./SignUp";
+import Contact from "./Contact";
+import ManageAccount from "./ManageAccount";
+import ManageAccountPackage from "./ManageAccountPackage";
 
 export default class Routes extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isLoggedIn: null,
-    };
-  }
-
-  async componentDidMount() {
-    await fetch("/api/checkLogin")
-      .then((response) => {
-        this.setState({ isLoggedIn: response.ok });
-      })
-      .catch((err) => console.log(err));
+    this.state = {};
   }
 
   render() {
-    let checkLogin:
-    checkLogin = {
-      if (isLoggedIn) {
-        <Route exact path="/" component={Home} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/manageaccount" component={ManageAccount} />
-        <Route
-          path="/manageaccountpackage"
-          component={ManageAccountPackage}
-        />
-      } else {
-        <Route path="/login" component={Signin} />
-        <Route path="/signup" component={SignUp} />
-    }
-
     return (
       <Router>
+        <Navigation />
         <Switch>
-          {/* <Route exact path="/">
-            {this.state.isLoggedIn ? Home : Signin}
-          </Route> */}
-          {/* <Route
-            path="/login"
-            component={this.state.isLoggedIn ? Home : Signin}
-          /> */}
-         { checkLogin }
+          <Route exact path="/" component={Home} />
+          <Route path="/signin" component={Signin} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/manageaccount" component={ManageAccount} />
+          <Route
+            path="/manageaccountpackage"
+            component={ManageAccountPackage}
+          />
         </Switch>
+        <Footer />
       </Router>
     );
   }

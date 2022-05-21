@@ -7,6 +7,4 @@ urlpatterns = [
     path('signout', views.SignOut), # Get
     path('updateUser', views.UpdateUser), # POST
     path('checkLogin', views.CheckLogin), # Get
-    # path('save', views.saveData),
-    # path('signt', views.SignTEST),
 ]

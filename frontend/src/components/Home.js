@@ -13,7 +13,7 @@ class Home extends Component {
   async handleLogoutButtonPressed() {
     await fetch("/api/signout")
       .then((response) => {
-        if (response.ok) this.props.history.push("/login");
+        if (response.ok) this.props.history.push("/signin");
         return response.json();
       })
       .then((data) => {
