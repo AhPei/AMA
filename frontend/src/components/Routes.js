@@ -14,6 +14,7 @@ import SignUp from "./SignUp";
 import Contact from "./Contact";
 import ManageAccount from "./ManageAccount";
 import ManageAccountPackage from "./ManageAccountPackage";
+import MachineLearning from "./MachineLearning";
 
 export default class Routes extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ export default class Routes extends Component {
             path="/manageaccountpackage"
             component={ManageAccountPackage}
           />
+          <Route path="/ml" component={MachineLearning} />
         </Switch>
         <Footer />
       </Router>

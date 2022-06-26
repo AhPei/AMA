@@ -6,7 +6,6 @@ from .forms import UserForm, UserLoginForm
 from .firebase import authe, database
 
 # Sign in
-@csrf_exempt
 def SignIn(request):
   if request.method != "POST":
     return JsonResponse({"Message":"Mehtod Not Allowed"}, status=status.HTTP_409_CONFLICT)
@@ -28,7 +27,6 @@ def SignIn(request):
   return JsonResponse({"Message":"Invalid Format"}, status=status.HTTP_400_BAD_REQUEST)
 
 # Sign Up
-@csrf_exempt
 def SignUp(request):
   if request.method not in {"POST"}:
     return JsonResponse({"Message":"Mehtod Not Allowed"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
@@ -53,7 +51,6 @@ def SignUp(request):
     return JsonResponse({"Message":"Email Already Existed"}, status=status.HTTP_409_CONFLICT)
 
 # Update User
-@csrf_exempt
 def UpdateUser(request):
   if request.method not in {"POST"}:
     return JsonResponse({"Message":"Mehtod Not Allowed"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
